@@ -1,2 +1,2 @@
 # ANTs_core
-Dockerfile for a bare-bones Ubuntu image with ANTs
+Dockerfile for a bare-bones Debian image with ANTs
