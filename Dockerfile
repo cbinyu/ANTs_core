@@ -30,7 +30,6 @@ RUN cd /tmp && \
     git checkout ${ANTs_VERSION} && \
     buildDir=${PWD}/build && \
     mkdir -p $buildDir ${ANTS_FOLDER} && \
-    buildThreads=4 && \
     cd $buildDir && \
     cmake \
         -DCMAKE_INSTALL_PREFIX=${ANTS_FOLDER} \
@@ -40,7 +39,7 @@ RUN cd /tmp && \
         -DRUN_LONG_TESTS=OFF \
         -DRUN_SHORT_TESTS=OFF \
         /tmp/ANTs 2>&1 | tee cmake.log && \
-    make -j $buildThreads 2>&1 | tee build.log && \
+    make 2>&1 | tee build.log && \
     cd ${buildDir}/ANTS-build && \
     make install 2>&1 | tee install.log && \
     rm -r /tmp/ANTs
